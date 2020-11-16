@@ -4,7 +4,7 @@ Send notifications to your LaMetric Time over a local network.
 
 ## Installation
 
-In your terminal, run: `$ npm i node-lametric-notify-local`
+In your terminal, run: `$ npm i lametric-notify-local`
 
 ## Usage
 
