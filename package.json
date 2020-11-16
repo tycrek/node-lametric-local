@@ -1,0 +1,31 @@
+{
+  "name": "lametric-local",
+  "version": "0.1.0",
+  "description": "Send notifications to your LaMetric Time over a local network",
+  "main": "lametric.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tycrek/node-lametric-local.git"
+  },
+  "keywords": [
+    "lametric",
+    "time",
+    "smart",
+    "clock"
+  ],
+  "author": "tycrek",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/tycrek/node-lametric-local/issues"
+  },
+  "homepage": "https://github.com/tycrek/node-lametric-local#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

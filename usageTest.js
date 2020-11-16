@@ -1,16 +1,5 @@
-# node-lametric-local
-
-Send notifications to your LaMetric Time over a local network.
-
-## Installation
-
-In your terminal, run: `$ npm i node-lametric-local`
-
-## Usage
-
-```js
 // Import the module
-const { LaMetric, LaMetricModel, LaMetricFrame } = require('node-lametric-time');
+const { LaMetric, LaMetricModel, LaMetricFrame } = require('./lametric');
 
 // Use the local network address of your LaMetric Time.
 // You can find this using the offical LaMetric app.
@@ -36,7 +25,5 @@ let model = new LaMetricModel([frameHello, frameWorld]);
 
 // Send the model. Returns a Promise
 lm.send(model.build())
-    .then(console.log)
-    .catch(console.err);
-
-```
+	.then(console.log)
+	.catch(console.err);
