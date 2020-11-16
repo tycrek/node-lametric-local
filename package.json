@@ -1,5 +1,5 @@
 {
-  "name": "lametric-local",
+  "name": "lametric-notify-local",
   "version": "0.1.0",
   "description": "Send notifications to your LaMetric Time over a local network",
   "main": "lametric.js",

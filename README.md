@@ -4,13 +4,13 @@ Send notifications to your LaMetric Time over a local network.
 
 ## Installation
 
-In your terminal, run: `$ npm i node-lametric-local`
+In your terminal, run: `$ npm i node-lametric-notify-local`
 
 ## Usage
 
 ```js
 // Import the module
-const { LaMetric, LaMetricModel, LaMetricFrame } = require('node-lametric-time');
+const { LaMetric, LaMetricModel, LaMetricFrame } = require('node-lametric-notify-local');
 
 // Use the local network address of your LaMetric Time.
 // You can find this using the offical LaMetric app.
