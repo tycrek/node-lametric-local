@@ -1,8 +1,22 @@
 require('dotenv').config();
-const { LaMetric, LaMetricModel, LaMetricFrame } = require('./lametric');
+const { LaMetric } = require('./dist/lametric');
 
-let lm = new LaMetric(process.env.IP, process.env.API);
+/**
+ * Returns a random number between 1 and 51000
+ * @returns {number}
+ */
+function randomIcon() {
+	return Math.floor(Math.random() * 51000) + 1;
+}
 
-lm.send(new LaMetricModel([new LaMetricFrame('hello', 87), new LaMetricFrame('world', 4612)]).build())
-	.then(console.log)
+const lm = new LaMetric(process.env.IP, process.env.API);
+lm.send({
+	model: {
+		frames: [
+			{ text: 'Hello', icon: randomIcon() /* 693 */ },
+			{ text: 'World', icon: randomIcon() /* 4612 */ }
+		]
+	}
+})
+	.then(({ data }) => console.log(data))
 	.catch(console.err);
