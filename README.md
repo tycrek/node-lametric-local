@@ -1,42 +1,51 @@
-# node-lametric-local
+[//]: # (NPM centered badge template START --------------------------------------------------)
 
-Send notifications to your LaMetric Time over a local network.
+<div align="center">
+
+lametric-notify-local
+===
+
+[![NPMCBT badge]][NPMCBT link]
+
+*Send notifications to your LaMetric Time over a local network.*
+
+</div>
+
+[NPMCBT badge]: https://img.shields.io/npm/v/lametric-notify-local?color=CB3837&label=%20View%20on%20NPM&logo=npm&style=for-the-badge
+[NPMCBT link]: https://www.npmjs.com/package/lametric-notify-local
+
+[//]: # (NPM centered badge template END ----------------------------------------------------)
 
 ## Installation
 
-In your terminal, run: `$ npm i lametric-notify-local`
+Run `npm i lametric-notify-local` to install.
 
 ## Usage
 
+Some things to note:
+
+- The **IP address** of your LaMetric can be found in the official LaMetric app.
+- Your **API Key** can be found [on the LaMetric developer site](https://developer.lametric.com/user/devices), under the **My Devices** tab.
+- Available **icons** for frames can be found on the [LaMetric icon gallery](https://developer.lametric.com/icons).
+
 ```js
 // Import the module
-const { LaMetric, LaMetricModel, LaMetricFrame } = require('node-lametric-notify-local');
-
-// Use the local network address of your LaMetric Time.
-// You can find this using the offical LaMetric app.
-const address = '0.0.0.0';
-
-// Local dev API key your LaMetric device.
-// Can be found at: https://developer.lametric.com/user/devices
-// For security, I suggest using dotenv: https://www.npmjs.com/package/dotenv
-const apiKey = 'abcdefgh12345678';
+const { LaMetric } = require('lametric-notify-local');
 
 // Create a LaMetric object
-const lm = new LaMetric(address, apiKey);
+const lm = new LaMetric(IP_ADDRESS, API_KEY);
 
-// Create a few frames
-// Parameters are text and icon.
-// Icon ID's can be found at: https://developer.lametric.com/icons
-let frameHello = new LaMetricFrame('hello', 87);
-let frameWorld = new LaMetricFrame('world', 4612);
-
-// Create a model
-// Parameter is an array of frames
-let model = new LaMetricModel([frameHello, frameWorld]);
-
-// Send the model. Returns a Promise
-lm.send(model.build())
+// Send the model. Returns a Promise with an Axios response.
+lm.send({
+    model: {
+        frames: [
+            { text: 'Hello' },
+            { text: 'World', icon: 4612 }
+        ]
+    }
+})
     .then(console.log)
     .catch(console.err);
-
 ```
+
+See [test.js](https://github.com/tycrek/node-lametric-local/blob/master/test.js) for a complete example.
