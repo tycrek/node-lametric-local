@@ -17,7 +17,7 @@
     "clock"
   ],
   "author": "tycrek",
-  "license": "GPL-3.0-or-later",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tycrek/node-lametric-local/issues"
   },
