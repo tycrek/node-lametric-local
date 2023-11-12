@@ -4,6 +4,9 @@
   "description": "Send notifications to your LaMetric Time over a local network",
   "main": "lametric.js",
   "type": "commonjs",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "build": "tsc",
     "test": "node test.js",
